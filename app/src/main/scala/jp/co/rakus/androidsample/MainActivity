@@ -1,0 +1,28 @@
+package jp.co.rakus.androidsample
+
+import android.os.Bundle
+import android.support.v7.app.{AppCompatActivity, ActionBarActivity}
+import android.view.{MenuItem, Menu}
+
+class MainActivity extends AppCompatActivity {
+  override def onOptionsItemSelected(item: MenuItem): Boolean = {
+    val id: Int = item.getItemId
+
+    //noinspection SimplifiableIfStatement
+    if (id == R.id.action_settings) {
+      return true
+    }
+
+    super.onOptionsItemSelected(item)
+  }
+
+  override def onCreateOptionsMenu(menu: Menu): Boolean = {
+    getMenuInflater.inflate(R.menu.menu_main, menu)
+    true
+  }
+
+  override def onCreate(savedInstanceState: Bundle): Unit = {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+  }
+}
